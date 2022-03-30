@@ -1,0 +1,14 @@
+https://voxhost.fr/wsusoffiline/ndp48-x86-x64-allos-enu.exe
+https://voxhost.fr/wsusoffiline/ndp48-x86-x64-allos-deu.exe
+https://voxhost.fr/wsusoffiline/dotnet-runtime-5.0.12-win-x86.exe
+https://voxhost.fr/wsusoffiline/dotnet-runtime-5.0.12-win-x64.exe
+https://voxhost.fr/wsusoffiline/windowsdesktop-runtime-5.0.12-win-x86.exe
+https://voxhost.fr/wsusoffiline/windowsdesktop-runtime-5.0.12-win-x64.exe
+https://voxhost.fr/wsusoffiline/aspnetcore-runtime-5.0.12-win-x86.exe
+https://voxhost.fr/wsusoffiline/aspnetcore-runtime-5.0.12-win-x64.exe
+https://voxhost.fr/wsusoffiline/dotnet-runtime-6.0.0-win-x86.exe
+https://voxhost.fr/wsusoffiline/dotnet-runtime-6.0.0-win-x64.exe
+https://voxhost.fr/wsusoffiline/windowsdesktop-runtime-6.0.0-win-x86.exe
+https://voxhost.fr/wsusoffiline/windowsdesktop-runtime-6.0.0-win-x64.exe
+https://voxhost.fr/wsusoffiline/aspnetcore-runtime-6.0.0-win-x86.exe
+https://voxhost.fr/wsusoffiline/aspnetcore-runtime-6.0.0-win-x64.exe

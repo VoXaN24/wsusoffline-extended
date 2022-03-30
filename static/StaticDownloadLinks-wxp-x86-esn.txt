@@ -1,0 +1,5 @@
+https://voxhost.fr/wsusoffiline/WindowsXP-KB936929-SP3-x86-ESN.exe
+https://voxhost.fr/wsusoffiline/WindowsXP-KB969084-x86-esn.exe
+https://voxhost.fr/wsusoffiline/WindowsXP-KB968930-x86-ESN.exe
+https://voxhost.fr/wsusoffiline/wmp11-windowsxp-x86-ES-ES.exe
+https://voxhost.fr/wsusoffiline/windows-es-es-kb2564958_c29836d3fd610263d469f025b1c49ed43a29cc1c.exe

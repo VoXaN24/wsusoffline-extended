@@ -1,0 +1,16 @@
+https://voxhost.fr/wsusoffiline/Microsoft%20ECC%20Root%20Certificate%20Authority%202017.crt
+https://voxhost.fr/wsusoffiline/Microsoft ECC Root Certificate Authority 2017.crl
+https://voxhost.fr/wsusoffiline/Microsoft RSA Root Certificate Authority 2017.crt
+https://voxhost.fr/wsusoffiline/Microsoft RSA Root Certificate Authority 2017.crl
+https://voxhost.fr/wsusoffiline/Microsoft EV ECC Root Certificate Authority 2017.crt
+https://voxhost.fr/wsusoffiline/Microsoft EV ECC Root Certificate Authority 2017.crl
+https://voxhost.fr/wsusoffiline/Microsoft EV RSA Root Certificate Authority 2017.crt
+https://voxhost.fr/wsusoffiline/Microsoft EV RSA Root Certificate Authority 2017.crl
+https://voxhost.fr/wsusoffiline/products/MicRooCerAut_2010-06-23.crl
+https://voxhost.fr/wsusoffiline/MicRooCerAut2011_2011_03_22.crt
+https://voxhost.fr/wsusoffiline/Microsoft Time Stamp Root Certificate Authority 2014.crt
+https://voxhost.fr/wsusoffiline/Microsoft Time Stamp Root Certificate Authority 2014.crl
+https://voxhost.fr/wsusoffiline/Microsoft ECC Product Root Certificate Authority 2018.crt
+https://voxhost.fr/wsusoffiline/Microsoft ECC Product Root Certificate Authority 2018.crl
+https://voxhost.fr/wsusoffiline/Microsoft ECC TS Root Certificate Authority 2018.crt
+https://voxhost.fr/wsusoffiline/Microsoft ECC TS Root Certificate Authority 2018.crl

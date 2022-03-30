@@ -1,0 +1,4 @@
+https://voxhost.fr/wsusoffiline/windowsserver2003-kb914961-sp2-x86-kor_65bcd5be738a08046f0714a108a5fa334ef08fd0.exe
+https://voxhost.fr/wsusoffiline/WindowsServer2003-KB925876-v2-x86-KOR.exe
+https://voxhost.fr/wsusoffiline/WindowsServer2003-KB968930-x86-KOR.exe
+https://voxhost.fr/wsusoffiline/windows-ko-kr-kb2564958_cbba78e1b7ffa9ba95b2bb385bde1a3b93b080ce.exe

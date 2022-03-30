@@ -1,0 +1,3 @@
+https://voxhost.fr/wsusoffiline/windowsserver2003.windowsxp-kb914961-sp2-x64-enu_7f8e909c52d23ac8b5dbfd73f1f12d3ee0fe794c.exe
+https://voxhost.fr/wsusoffiline/WindowsServer2003-KB942288-v4-x64.exe
+https://voxhost.fr/wsusoffiline/wmp11-windowsxp-x64-enu.exe

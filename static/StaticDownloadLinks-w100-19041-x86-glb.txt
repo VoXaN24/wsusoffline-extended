@@ -1,0 +1,3 @@
+https://voxhost.fr/wsusoffiline/windows10.0-kb4589212-x86_218f1273f7ae15b86dfe1a7b64aee1b67ca0babf.msu
+https://voxhost.fr/wsusoffiline/windows10.0-kb4562830-x86_f351f1af1971616730644a722c64b1ba3ea53f5a.msu
+https://voxhost.fr/wsusoffiline/windows10.0-kb5000736-x86_428ba21ee5118bac619f4de6977de69c1f65b066.msu

@@ -1,0 +1,3 @@
+https://voxhost.fr/wsusoffiline/WindowsServer2003-KB968930-x64-PTB.exe
+https://voxhost.fr/wsusoffiline/windows-pt-br-kb2564958_c25a3c154a2db129ea9f338cec1e6210be6aaeb0.exe
+https://voxhost.fr/wsusoffiline/wic_x64_ptb.exe

@@ -1,0 +1,2 @@
+https://voxhost.fr/wsusoffiline/aria2-1.35.0-win-32bit-build1.zip
+https://voxhost.fr/wsusoffiline/aria2-1.35.0-win-64bit-build1.zip

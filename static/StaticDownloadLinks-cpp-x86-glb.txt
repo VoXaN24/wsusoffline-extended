@@ -1,0 +1,6 @@
+https://voxhost.fr/wsusoffiline/vcredist2005_x86.exe
+https://voxhost.fr/wsusoffiline/vcredist2008_x86.exe
+https://voxhost.fr/wsusoffiline/vcredist2010_x86.exe
+https://voxhost.fr/wsusoffiline/vcredist2012_x86.exe
+https://voxhost.fr/wsusoffiline/vcredist2013_x86.exe
+https://voxhost.fr/wsusoffiline/vcredist2015_x86.exe

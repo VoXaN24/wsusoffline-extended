@@ -1,0 +1,5 @@
+https://voxhost.fr/wsusoffiline/windowsserver2003-kb914961-sp2-x86-fra_51f76d9ebb01806f905199f83a16715e8026c095.exe
+https://voxhost.fr/wsusoffiline/WindowsServer2003-KB925876-v2-x86-FRA.exe
+https://voxhost.fr/wsusoffiline/WindowsServer2003-KB968930-x86-FRA.exe
+https://voxhost.fr/wsusoffiline/windows-fr-fr-kb2564958_2c894b38c34867980c71a815f99c82e315875c44.exe
+https://voxhost.fr/wsusoffiline/wic_x86_fra.exe

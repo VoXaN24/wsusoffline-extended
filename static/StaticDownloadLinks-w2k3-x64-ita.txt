@@ -1,0 +1,3 @@
+https://voxhost.fr/wsusoffiline/WindowsServer2003-KB968930-x64-ITA.exe
+https://voxhost.fr/wsusoffiline/windows-it-it-kb2564958_32091f31c9ee567b790de90778504a85023a4b03.exe
+https://voxhost.fr/wsusoffiline/wic_x64_ita.exe
