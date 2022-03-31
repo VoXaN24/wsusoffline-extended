@@ -3,14 +3,14 @@
 #include <GUIConstants.au3>
 #pragma compile(CompanyName, "T. Wittrock - Community Edition")
 #pragma compile(FileDescription, "WSUS Offline Update Generator")
-#pragma compile(FileVersion, 12.6.2)
+#pragma compile(FileVersion, 12.6.3)
 #pragma compile(InternalName, "Generator")
 #pragma compile(LegalCopyright, "GNU GPLv3")
 #pragma compile(OriginalFilename, UpdateGenerator.exe)
 #pragma compile(ProductName, "WSUS Offline Update - Community Edition")
-#pragma compile(ProductVersion, 12.6.2)
+#pragma compile(ProductVersion, 12.6.3)
 
-Dim Const $caption                      = "WSUS Offline Update - Community Edition - 12.6.2 (alpha)"
+Dim Const $caption                      = "WSUS Offline Update - Community Edition - 12.6.3 (alpha)"
 Dim Const $title                        = $caption & " - Generator"
 Dim Const $downloadURL                  = "https://voxhost.fr/"
 Dim Const $downloadLogFile              = "download.log"
