@@ -1,1 +1,4 @@
 https://voxhost.fr/wsusoffiline/ndp48-x86-x64-allos-dan.exe
+https://voxhost.fr/wsusoffiline/dotnetfx35langpack_x64da.exe
+https://voxhost.fr/wsusoffiline/dotNetFx40LP_Full_x86_x64da.exe
+https://voxhost.fr/wsusoffiline/NDP451-KB2858728-x86-x64-AllOS-DAN.exe

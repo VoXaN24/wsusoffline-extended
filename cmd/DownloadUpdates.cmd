@@ -35,7 +35,7 @@ if "%DIRCMD%" NEQ "" set DIRCMD=
 
 cd /D "%~dp0"
 
-set WSUSOFFLINE_VERSION=12.6.1 (b12)
+set WSUSOFFLINE_VERSION=12.6.2 (alfa)
 title %~n0 %1 %2 %3 %4 %5 %6 %7 %8 %9
 echo Starting WSUS Offline Update - Community Edition - download v. %WSUSOFFLINE_VERSION% for %1 %2...
 set DOWNLOAD_LOGFILE=..\log\download.log
@@ -73,6 +73,11 @@ for %%i in (w62-x64 w63 w63-x64 w100 w100-x64 o2k16) do (
 for %%i in (o2k13) do (
   if /i "%1"=="%%i" (
     for %%j in (enu fra esn jpn kor rus ptg ptb deu nld ita chs cht plk hun csy sve trk ell ara heb dan nor fin) do (if /i "%2"=="%%j" goto Lang_%%j)
+  )
+)
+for %%i in (wxp w2k3 w2k3-x64) do (
+  if /i "%1"=="%%i" (
+    for %%j in (enu fra esn jpn kor rus ptg ptb deu nld ita chs cht plk hun csy sve trk ell ara heb dan nor fin) do (if /i "%2"=="%%j" goto EvalParams)
   )
 )
 goto InvalidParams
@@ -1228,7 +1233,6 @@ goto SkipMSEdge
 
 :DownloadMSEdge
 if not exist ..\client\msedge\nul md ..\client\msedge
-
 for /F "usebackq tokens=1,2 delims=," %%j in ("%TEMP%\DynamicDownloadLinks-msedge.txt") do (
   if "%%k" NEQ "" (
     if not exist "..\client\msedge\%%k" (
@@ -1349,9 +1353,23 @@ for %%i in (..\client\md\hashes-wddefs-%TARGET_ARCH%-glb.txt) do if %%~zi==0 del
 
 rem *** Download the platform specific patches ***
 if "%EXC_WINGLB%"=="1" goto SkipWinGlb
-for %%i in (w62-x64 w63 w63-x64 w100 w100-x64) do (
+for %%i in (wxp w2k3 w2k3-x64 w62-x64 w63 w63-x64 w100 w100-x64) do (
   if /i "%1"=="%%i" (
     call :DownloadCore win glb x86 /skipdynamic
+    if errorlevel 1 goto Error
+  )
+)
+for %%i in (wxp w2k3) do (
+  if /i "%1"=="%%i" (
+    call :DownloadCore win %2 %TARGET_ARCH% %SKIP_PARAM%
+    if errorlevel 1 goto Error
+  )
+)
+for %%i in (wxp w2k3 w2k3-x64) do (
+  if /i "%1"=="%%i" (
+    call :DownloadCore %1 glb %TARGET_ARCH% %SKIP_PARAM%
+    if errorlevel 1 goto Error
+    call :DownloadCore %1 %2 %TARGET_ARCH% %SKIP_PARAM%
     if errorlevel 1 goto Error
   )
 )
@@ -1757,7 +1775,7 @@ if "%4"=="/skipdynamic" (
 )
 if not exist ..\client\UpdateTable\nul md ..\client\UpdateTable
 
-set PLATFORM_WINDOWS=w62 w63 w100
+set PLATFORM_WINDOWS=wxp w2k3 w2k3-x64 w62 w63 w100
 set PLATFORM_OFFICE=o2k13 o2k16
 
 rem *** Determine dynamic update urls for %1 %2 ***

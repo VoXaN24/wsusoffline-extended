@@ -1,1 +1,4 @@
 https://voxhost.fr/wsusoffiline/ndp48-x86-x64-allos-cht.exe
+https://voxhost.fr/wsusoffiline/dotnetfx35langpack_x64zh-cht.exe
+https://voxhost.fr/wsusoffiline/dotNetFx40LP_Full_x86_x64zh-Hant.exe
+https://voxhost.fr/wsusoffiline/NDP451-KB2858728-x86-x64-AllOS-CHT.exe

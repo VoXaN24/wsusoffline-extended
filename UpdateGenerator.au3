@@ -410,7 +410,69 @@ Func IsWin10Checked($win10_checkboxes)
   Next
   Return False
 EndFunc
-
+Func IsLangWinXPChecked()
+	Return (IsCheckBoxChecked($wxp_enu) _
+       OR IsCheckBoxChecked($wxp_fra) _
+       OR IsCheckBoxChecked($wxp_esn) _
+       OR IsCheckBoxChecked($wxp_jpn) _
+       OR IsCheckBoxChecked($wxp_kor) _
+       OR IsCheckBoxChecked($wxp_rus) _
+       OR IsCheckBoxChecked($wxp_ptg) _
+       OR IsCheckBoxChecked($wxp_ptb) _
+       OR IsCheckBoxChecked($wxp_deu) _
+       OR IsCheckBoxChecked($wxp_nld) _
+       OR IsCheckBoxChecked($wxp_ita) _
+       OR IsCheckBoxChecked($wxp_chs) _
+       OR IsCheckBoxChecked($wxp_cht) _
+       OR IsCheckBoxChecked($wxp_plk) _
+       OR IsCheckBoxChecked($wxp_hun) _
+       OR IsCheckBoxChecked($wxp_csy) _
+       OR IsCheckBoxChecked($wxp_sve) _
+       OR IsCheckBoxChecked($wxp_trk) _
+       OR IsCheckBoxChecked($wxp_ell) _
+       OR IsCheckBoxChecked($wxp_ara) _
+       OR IsCheckBoxChecked($wxp_heb) _
+       OR IsCheckBoxChecked($wxp_dan) _
+       OR IsCheckBoxChecked($wxp_nor) _
+       OR IsCheckBoxChecked($wxp_fin) )
+EndFunc
+  Func IsLangWin2k3Checked()
+	  Return (IsCheckBoxChecked($w2k3_enu) _
+       OR IsCheckBoxChecked($w2k3_fra) _
+       OR IsCheckBoxChecked($w2k3_esn) _
+       OR IsCheckBoxChecked($w2k3_jpn) _
+       OR IsCheckBoxChecked($w2k3_kor) _
+       OR IsCheckBoxChecked($w2k3_rus) _
+       OR IsCheckBoxChecked($w2k3_ptg) _
+       OR IsCheckBoxChecked($w2k3_ptb) _
+       OR IsCheckBoxChecked($w2k3_deu) _
+       OR IsCheckBoxChecked($w2k3_nld) _
+       OR IsCheckBoxChecked($w2k3_ita) _
+       OR IsCheckBoxChecked($w2k3_chs) _
+       OR IsCheckBoxChecked($w2k3_cht) _
+       OR IsCheckBoxChecked($w2k3_plk) _
+       OR IsCheckBoxChecked($w2k3_hun) _
+       OR IsCheckBoxChecked($w2k3_csy) _
+       OR IsCheckBoxChecked($w2k3_sve) _
+       OR IsCheckBoxChecked($w2k3_trk) _
+       OR IsCheckBoxChecked($w2k3_ell) _
+       OR IsCheckBoxChecked($w2k3_ara) _
+       OR IsCheckBoxChecked($w2k3_heb) _
+       OR IsCheckBoxChecked($w2k3_dan) _
+       OR IsCheckBoxChecked($w2k3_nor) _
+       OR IsCheckBoxChecked($w2k3_fin) )
+EndFunc
+Func IsLangWin2k3x64Checked()
+	Return (IsCheckBoxChecked($w2k3_x64_enu) _
+       OR IsCheckBoxChecked($w2k3_x64_fra) _
+       OR IsCheckBoxChecked($w2k3_x64_esn) _
+       OR IsCheckBoxChecked($w2k3_x64_jpn) _
+       OR IsCheckBoxChecked($w2k3_x64_kor) _
+       OR IsCheckBoxChecked($w2k3_x64_rus) _
+       OR IsCheckBoxChecked($w2k3_x64_ptg) _
+       OR IsCheckBoxChecked($w2k3_x64_ptb) _
+       OR IsCheckBoxChecked($w2k3_x64_deu) )
+EndFunc
 Func IsLangOfficeChecked()
   Return (IsCheckBoxChecked($o2k13_enu) _
        OR IsCheckBoxChecked($o2k13_fra) _
@@ -452,7 +514,7 @@ Func SwitchDownloadTargets($state)
   GUICtrlSetState($w63_glb, $state)
   GUICtrlSetState($w63_x64_glb, $state)
 ;add winxp&srv2003
-GUICtrlSetState($wxp_enu, $state)
+  GUICtrlSetState($wxp_enu, $state)
   GUICtrlSetState($w2k3_enu, $state)
   GUICtrlSetState($w2k3_x64_enu, $state)
   GUICtrlSetState($wxp_fra, $state)
@@ -2521,17 +2583,17 @@ While 1
         EndIf
       EndIf
 	 If IsCheckBoxChecked($wxp_enu) Then
-        If RunScripts("wxp enu", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("wxp enu", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_enu) Then
-        If RunScripts("w2k3 enu", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3 enu", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_x64_enu) Then
-        If RunScripts("w2k3-x64 enu", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3-x64 enu", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
@@ -2543,17 +2605,17 @@ While 1
         EndIf
       EndIf
       If IsCheckBoxChecked($wxp_fra) Then
-        If RunScripts("wxp fra", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("wxp fra", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_fra) Then
-        If RunScripts("w2k3 fra", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3 fra", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_x64_fra) Then
-        If RunScripts("w2k3-x64 fra", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3-x64 fra", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
@@ -2565,17 +2627,17 @@ While 1
         EndIf
       EndIf
       If IsCheckBoxChecked($wxp_esn) Then
-        If RunScripts("wxp esn", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("wxp esn", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_esn) Then
-        If RunScripts("w2k3 esn", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3 esn", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_x64_esn) Then
-        If RunScripts("w2k3-x64 esn", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3-x64 esn", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
@@ -2587,17 +2649,17 @@ While 1
         EndIf
       EndIf
       If IsCheckBoxChecked($wxp_jpn) Then
-        If RunScripts("wxp jpn", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("wxp jpn", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_jpn) Then
-        If RunScripts("w2k3 jpn", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3 jpn", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_x64_jpn) Then
-        If RunScripts("w2k3-x64 jpn", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3-x64 jpn", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
@@ -2609,17 +2671,17 @@ While 1
         EndIf
       EndIf
       If IsCheckBoxChecked($wxp_kor) Then
-        If RunScripts("wxp kor", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("wxp kor", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_kor) Then
-        If RunScripts("w2k3 kor", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3 kor", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_x64_kor) Then
-        If RunScripts("w2k3-x64 kor", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3-x64 kor", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
@@ -2631,17 +2693,17 @@ While 1
         EndIf
       EndIf
       If IsCheckBoxChecked($wxp_rus) Then
-        If RunScripts("wxp rus", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("wxp rus", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_rus) Then
-        If RunScripts("w2k3 rus", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3 rus", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_x64_rus) Then
-        If RunScripts("w2k3-x64 rus", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3-x64 rus", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
@@ -2653,12 +2715,12 @@ While 1
         EndIf
       EndIf
       If IsCheckBoxChecked($wxp_ptg) Then
-        If RunScripts("wxp ptg", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("wxp ptg", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_ptg) Then
-        If RunScripts("w2k3 ptg", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3 ptg", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
@@ -2670,17 +2732,17 @@ While 1
         EndIf
       EndIf
       If IsCheckBoxChecked($wxp_ptb) Then
-        If RunScripts("wxp ptb", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("wxp ptb", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_ptb) Then
-        If RunScripts("w2k3 ptb", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3 ptb", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_x64_ptb) Then
-        If RunScripts("w2k3-x64 ptb", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3-x64 ptb", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
@@ -2692,17 +2754,17 @@ While 1
         EndIf
       EndIf
       If IsCheckBoxChecked($wxp_deu) Then
-        If RunScripts("wxp deu", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("wxp deu", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_deu) Then
-        If RunScripts("w2k3 deu", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3 deu", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_x64_deu) Then
-        If RunScripts("w2k3-x64 deu", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3-x64 deu", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
@@ -2714,12 +2776,12 @@ While 1
         EndIf
       EndIf
       If IsCheckBoxChecked($wxp_nld) Then
-        If RunScripts("wxp nld", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("wxp nld", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_nld) Then
-        If RunScripts("w2k3 nld", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3 nld", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
@@ -2731,12 +2793,12 @@ While 1
         EndIf
       EndIf
       If IsCheckBoxChecked($wxp_ita) Then
-        If RunScripts("wxp ita", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("wxp ita", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_ita) Then
-        If RunScripts("w2k3 ita", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3 ita", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
@@ -2748,12 +2810,12 @@ While 1
         EndIf
       EndIf
       If IsCheckBoxChecked($wxp_chs) Then
-        If RunScripts("wxp chs", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("wxp chs", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_chs) Then
-        If RunScripts("w2k3 chs", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3 chs", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
@@ -2765,12 +2827,12 @@ While 1
         EndIf
       EndIf
       If IsCheckBoxChecked($wxp_cht) Then
-        If RunScripts("wxp cht", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("wxp cht", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_cht) Then
-        If RunScripts("w2k3 cht", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3 cht", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
@@ -2782,12 +2844,12 @@ While 1
         EndIf
       EndIf
       If IsCheckBoxChecked($wxp_plk) Then
-        If RunScripts("wxp plk", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("wxp plk", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_plk) Then
-        If RunScripts("w2k3 plk", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3 plk", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
@@ -2799,12 +2861,12 @@ While 1
         EndIf
       EndIf
       If IsCheckBoxChecked($wxp_hun) Then
-        If RunScripts("wxp hun", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("wxp hun", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_hun) Then
-        If RunScripts("w2k3 hun", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3 hun", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
@@ -2815,12 +2877,12 @@ While 1
         EndIf
       EndIf
       If IsCheckBoxChecked($wxp_csy) Then
-        If RunScripts("wxp csy", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("wxp csy", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_csy) Then
-        If RunScripts("w2k3 csy", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3 csy", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
@@ -2831,12 +2893,12 @@ While 1
         EndIf
       EndIf
       If IsCheckBoxChecked($wxp_sve) Then
-        If RunScripts("wxp sve", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("wxp sve", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_sve) Then
-        If RunScripts("w2k3 sve", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3 sve", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
@@ -2847,12 +2909,12 @@ While 1
         EndIf
       EndIf
       If IsCheckBoxChecked($wxp_trk) Then
-        If RunScripts("wxp trk", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("wxp trk", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
       If IsCheckBoxChecked($w2k3_trk) Then
-        If RunScripts("w2k3 trk", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("w2k3 trk", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
@@ -2863,7 +2925,7 @@ While 1
         EndIf
       EndIf
       If IsCheckBoxChecked($wxp_ell) Then
-        If RunScripts("wxp ell", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("wxp ell", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
@@ -2879,7 +2941,7 @@ While 1
         EndIf
       EndIf
       If IsCheckBoxChecked($wxp_ara) Then
-        If RunScripts("wxp ara", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("wxp ara", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
@@ -2890,7 +2952,7 @@ While 1
         EndIf
       EndIf
       If IsCheckBoxChecked($wxp_heb) Then
-        If RunScripts("wxp heb", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("wxp heb", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
@@ -2901,7 +2963,7 @@ While 1
         EndIf
       EndIf
       If IsCheckBoxChecked($wxp_dan) Then
-        If RunScripts("wxp dan", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("wxp dan", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
@@ -2912,7 +2974,7 @@ While 1
         EndIf
       EndIf
       If IsCheckBoxChecked($wxp_nor) Then
-        If RunScripts("wxp nor", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("wxp nor", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
@@ -2923,7 +2985,7 @@ While 1
         EndIf
       EndIf
       If IsCheckBoxChecked($wxp_fin) Then
-        If RunScripts("wxp fin", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($includesp, $dotnet, $msse, $wddefs, $cleanupdownloads, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($includesp, $dotnet, $msse, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
+        If RunScripts("wxp fin", IsCheckBoxChecked($imageonly), DetermineDownloadSwitches($dotnet, $seconly, $wddefs, $verifydownloads, AuthProxy($proxy, $proxypwd), $wsus), IsCheckBoxChecked($cdiso), DetermineISOSwitches($dotnet, $wddefs, $usbclean), IsCheckBoxChecked($usbcopy), GUICtrlRead($usbpath)) <> 0 Then
           ContinueLoop
         EndIf
       EndIf
